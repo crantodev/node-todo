@@ -1,26 +1,27 @@
 {
-    "name": "todo",
-    "version": "1.0.0",
-    "description": "NodeJS ToDo",
-    "scripts": {
-      "docker:build": "docker-compose -f docker/docker-compose.yml --project-name todo build",
-      "docker:up": "docker-compose -f docker/docker-compose.yml --project-name todo up -d",
-      "docker:down": "docker-compose -f docker/docker-compose.yml --project-name todo down",
-      "docker:uninstall": "docker-compose -f docker/docker-compose.yml --project-name todo down --rmi all",
-      "docker:logs": "docker-compose -f docker/docker-compose.yml --project-name todo logs",
-      "docker:ps": "docker-compose -f docker/docker-compose.yml --project-name todo ps",
-      "docker:exec": "docker-compose -f docker/docker-compose.yml --project-name todo exec"
-    },
-    "repository": {
-      "type": "git",
-      "url": "git+https://github.com/crantodev/node-todo.git"
-    },
-    "keywords": [],
-    "author": "Daniel Mora <develop@danielmora.cr>",
-    "license": "ISC",
-    "bugs": {
-      "url": "https://github.com/crantodev/node-todo/issues"
-    },
-    "homepage": "https://github.com/crantodev/node-todo#readme"
-  }
-  
+  "name": "todo",
+  "version": "1.0.0",
+  "description": "NodeJS ToDo",
+  "scripts": {
+    "docker:build": "docker-compose -f docker/docker-compose.yml --project-name todo build",
+    "docker:up": "docker-compose -f docker/docker-compose.yml --project-name todo up -d",
+    "docker:down": "docker-compose -f docker/docker-compose.yml --project-name todo down",
+    "docker:uninstall": "docker-compose -f docker/docker-compose.yml --project-name todo down --rmi all",
+    "docker:logs": "docker-compose -f docker/docker-compose.yml --project-name todo logs",
+    "docker:ps": "docker-compose -f docker/docker-compose.yml --project-name todo ps",
+    "docker:exec": "docker-compose -f docker/docker-compose.yml --project-name todo exec",
+    "db:migration:create": "cd api && npx sequelize migration:create",
+    "db:model:create": "cd api && npx sequelize model:generate"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crantodev/node-todo.git"
+  },
+  "keywords": [],
+  "author": "Daniel Mora <develop@danielmora.cr>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/crantodev/node-todo/issues"
+  },
+  "homepage": "https://github.com/crantodev/node-todo#readme"
+}
