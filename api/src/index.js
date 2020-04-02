@@ -1,14 +1,19 @@
-const express = require('express');
+const express = require("express");
 
 const app = express();
-app.use(express.json());
+const routes = require("./routes");
 
-app.get('/', (req, res) => {
-    return res.json({message: "App is up an running"});
-});
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use("/", routes);
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => {
-    console.log(`API is running in PORT ${PORT}`)
+const httpServer = app.listen(PORT, () => {
+  console.log(`API is running in PORT ${PORT}`);
+});
+
+httpServer.on("error", error => {
+  console.log(error);
+  return process.exit(0);
 });
